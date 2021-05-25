@@ -1,9 +1,5 @@
-const firebase =require("firebase/app");
-require("firebase/database");
 var ipfs=require('./ipfs.js');
-const uri = require('image-data-uri')
 const imageToUri = require('image-to-uri');
-const { time } = require("console");
 
 const readline = require('readline').createInterface({
   input: process.stdin,
@@ -33,7 +29,7 @@ function getInfo(){
 }
 
 
-function get_hash_metadata(itemName, path, privateKey){
+function get_hash_metadata_private(itemName, path, privateKey){
   var hashArray = new Array()
   imgHash=imageToUri(path)
   var encryptedIMG=ipfs.encrypt(imgHash)
@@ -47,14 +43,34 @@ function get_hash_metadata(itemName, path, privateKey){
   return{
     encryptedIMG, 
     privateKey,
+    path,
     nameHash, 
     time,
     fullHash
-  }
-  
-
+  }  
 }
-get_hash_metadata('Van Gogh', '/Users/jackmcdonald/Downloads/starry-night-van-gogh.jpg', 'Private key')
+
+function get_hash_metadata_public(itemName, path){
+  var hashArray = new Array()
+  imgHash=imageToUri(path)
+  var encryptedIMG=ipfs.encrypt(imgHash)
+  hashArray.push(encryptedIMG)
+  var nameHash= ipfs.encrypt(itemName)
+  hashArray.push(nameHash)
+  var time=Date.now()
+  hashArray.push(time)
+  fullHash= hashArray.join('')
+
+  return{
+    encryptedIMG, 
+    path,
+    nameHash, 
+    time,
+    fullHash
+  }  
+}
+
+
 
 function formItemHash(){
   userID=ipfs.encrypt(name)
@@ -71,3 +87,5 @@ function writeUserData(itemName, itemID) {
 
     });
   }
+
+  module.exports = { get_hash_metadata_public, get_hash_metadata_private };
