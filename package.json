@@ -1,0 +1,23 @@
+{
+  "name": "off-chain-toolkit1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jackmmcd/offChainLabs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jackmmcd/offChainLabs/issues"
+  },
+  "homepage": "https://github.com/Jackmmcd/offChainLabs#readme",
+  "dependencies": {
+    "image-to-uri": "^1.0.0",
+    "ipfs-only-hash": "^4.0.0"
+  }
+}
