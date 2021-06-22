@@ -2,10 +2,10 @@ const { NFTStorage, File, Blob } = require('nft.storage');
 const { encrypt } = require('./ipfs.js');
 const { validate, getAddressInfo } = require('bitcoin-address-validation');
 
-
+nftStorage_key=key
 
 async function mint(itemName, description, img, btcAddress, priceInBTC){
-    const apiKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweDJkZTM2MThEN0YwOTc2NWZBYzcyNzlEMzQzOTQwNUM0NWQxMzc4OTIiLCJpc3MiOiJuZnQtc3RvcmFnZSIsImlhdCI6MTYyMzYxMjM0MTEwMSwibmFtZSI6Im9mZkNoYWluIn0.690wvdvlWRWPDDSMJ_bhKus1vf5eheGue7UrA5z0ly8'
+    const apiKey = key
     const client = new NFTStorage({ token: apiKey })
     var time = Date.now()
     var strTime =time.toString()
