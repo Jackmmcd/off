@@ -67,12 +67,4 @@ async function contribute(itemName, description, img,priceInBTC){
 */
 
 
-/*  
-1. convert encryption techniques into nftstorage native functions
-2. eth address validation 
-3. price integration 
 
-
-
-
-*/
