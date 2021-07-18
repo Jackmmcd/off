@@ -23,7 +23,7 @@ var key="" //private key
 //        hashAlg: 'sha2-256'
 //      })
 //}
-const apiKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweDJkZTM2MThEN0YwOTc2NWZBYzcyNzlEMzQzOTQwNUM0NWQxMzc4OTIiLCJpc3MiOiJuZnQtc3RvcmFnZSIsImlhdCI6MTYyMzYxMjM0MTEwMSwibmFtZSI6Im9mZkNoYWluIn0.690wvdvlWRWPDDSMJ_bhKus1vf5eheGue7UrA5z0ly8'
+const apiKey = //nft storageapi key
 const client = new NFTStorage({ token: apiKey })
 
 async function async_ipfsStorage(path, name, ethAddress){
